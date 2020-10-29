@@ -1,5 +1,5 @@
 <template>
-  <v-row no-gutters class="home-page">
+  <v-row no-gutters class="display-curricula-page">
     <v-col
       md="6"
       offset-md="3"
@@ -12,12 +12,18 @@
       </div>
 
       <div class="curricula-list">
-        <v-card
-            outlined>
+        <v-card v-for="curriculum in curriculaData"
+          :key="curriculum.id"
+          class="curriculum-card"
+          outlined>
           <v-list-item three-line>
             <v-list-item-content>
-              <v-card-title class="headline">My Curriculum #1</v-card-title>
-              <v-card-subtitle>This is a description..........</v-card-subtitle>
+              <v-card-title class="headline">
+                <router-link :to="`/curricula/${curriculum.id}`">
+                  {{ curriculum.name }}
+                </router-link>
+              </v-card-title>
+              <v-card-subtitle>{{ curriculum.description }}</v-card-subtitle>
             </v-list-item-content>
           </v-list-item>
         </v-card>
@@ -27,8 +33,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'DisplayCurricula'
+  name: 'DisplayCurricula',
+  computed: {
+    ...mapState(['curriculaData'])
+  }
 }
 </script>
 

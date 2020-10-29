@@ -8,8 +8,8 @@
     >
     <v-row>
       <v-col cols="12">
-        <h1>Display curriculum</h1>
-        <p>This is the description....... This is the description....... This is the description....... This is the description.......</p>
+        <h1>{{ selectedCurriculum.name }}</h1>
+        <p>{{ selectedCurriculum.description }}</p>
       </v-col>
     </v-row>
 
@@ -147,3 +147,25 @@
     </v-col>
   </v-row>
 </template>
+
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  name: 'DisplayCurriculum',
+  data () {
+    return {
+      curriculumId: this.$route.params.id,
+      selectedCurriculum: {}
+    }
+  },
+  computed: {
+    ...mapState(['curriculaData'])
+  },
+  mounted () {
+    this.selectedCurriculum = this.curriculaData.find((curriculum) => {
+      return curriculum.id === this.$route.params.id
+    })
+  }
+}
+</script>

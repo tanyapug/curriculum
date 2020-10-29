@@ -1,5 +1,5 @@
 <template>
-  <v-row no-gutters class="upsert-curriculum-page">
+  <v-row no-gutters class="create-curriculum-page">
     <v-col
       md="6"
       offset-md="3"
@@ -124,6 +124,6 @@
 <script>
 
 export default {
-  name: 'CreateCurriculum'
+  name: 'Create'
 }
 </script>
