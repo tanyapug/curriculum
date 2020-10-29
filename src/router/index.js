@@ -19,18 +19,19 @@ const routes = [
     component: DisplayCurricula
   },
   {
-    path: '/curricula/:id',
-    name: 'DisplayCurriculum',
-    component: DisplayCurriculum
-  },
-  {
     path: '/curricula/create',
     name: 'Create',
     component: CreateCurriculum
+  },
+  {
+    path: '/curricula/:id',
+    name: 'DisplayCurriculum',
+    component: DisplayCurriculum
   }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

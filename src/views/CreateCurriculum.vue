@@ -122,8 +122,7 @@
 </template>
 
 <script>
-
 export default {
-  name: 'Create'
+  name: 'CreateCurriculum'
 }
 </script>
