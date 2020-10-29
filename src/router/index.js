@@ -13,7 +13,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/curriculum',
+    path: '/curriculum/upsert',
     name: 'Upsert Curriculum',
     component: UpsertCurriculum
   },

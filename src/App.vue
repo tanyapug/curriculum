@@ -1,27 +1,24 @@
 <template>
-  <v-app>
-    <div id="nav" class="mt-5">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/curriculum">Create</router-link>
-    </div>
-    <v-content>
-      <router-view />
-    </v-content>
+  <v-app id="app">
+    <TopNav />
+    <v-main>
+      <v-container>
+        <router-view />
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
 <script>
+import TopNav from '@/components/TopNav'
+
 export default {
   name: 'App',
-
-  data: () => ({
-    //
-  })
+  components: {
+    TopNav
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-  #nav {
-    text-align: center;
-  }
 </style>
