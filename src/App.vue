@@ -4,7 +4,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/curriculum">Create</router-link>
     </div>
-    <router-view />
+    <v-content>
+      <router-view />
+    </v-content>
   </v-app>
 </template>
 
